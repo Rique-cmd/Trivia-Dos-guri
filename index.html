@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia dos Guri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Tela de Seleção de Dificuldade -->
+        <div id="difficultyScreen" class="screen">
+            <h1>Trivia dos Guri</h1>
+            <p>Escolha o nível de dificuldade</p>
+            <div class="buttons">
+                <button class="btn btn-easy" onclick="startGame('easy')">🟢 Fácil</button>
+                <button class="btn btn-medium" onclick="startGame('medium')">🟡 Médio</button>
+                <button class="btn btn-hard" onclick="startGame('hard')">🔴 Difícil</button>
+            </div>
+        </div>
+
+        <!-- Tela de Carregamento -->
+        <div id="loadingScreen" class="screen hidden">
+            <div class="spinner"></div>
+            <p>Carregando perguntas...</p>
+        </div>
+
+        <!-- Tela do Jogo -->
+        <div id="gameScreen" class="screen hidden">
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="question-counter" id="questionCounter"></p>
+            
+            <h2 id="questionText"></h2>
+            
+            <div class="answers" id="answersContainer"></div>
+            
+            <div class="feedback" id="feedback"></div>
+        </div>
+
+        <!-- Tela de Resultado -->
+        <div id="resultScreen" class="screen hidden">
+            <div class="result-emoji" id="resultEmoji"></div>
+            <h1 id="resultMessage"></h1>
+            <div class="score-box">
+                <div class="score-number" id="scoreNumber"></div>
+                <div class="score-text">Acertos</div>
+                <div class="score-percentage" id="scorePercentage"></div>
+            </div>
+            <button class="btn btn-restart" onclick="location.reload()">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
